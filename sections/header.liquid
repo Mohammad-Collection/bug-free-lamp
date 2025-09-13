@@ -1,0 +1,64 @@
+{% comment %}
+  Basic header section
+{% endcomment %}
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="site-title">
+        <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+      </h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="{{ routes.root_url }}">Home</a></li>
+          <li><a href="{{ routes.collections_url }}">Collections</a></li>
+          <li><a href="{{ routes.cart_url }}">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+.site-header {
+  padding: 1rem 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: #3498db;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

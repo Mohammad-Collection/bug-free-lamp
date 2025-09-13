@@ -1,0 +1,55 @@
+{% comment %}
+  Product template
+  Can include reveal image for product showcases
+{% endcomment %}
+
+<div class="product-page">
+  <div class="container">
+    <h1>{{ product.title }}</h1>
+    
+    <!-- Product Reveal Image -->
+    {% section 'reveal-image' %}
+    
+    <div class="product-info">
+      <p>{{ product.description }}</p>
+      <p class="price">{{ product.price | money }}</p>
+      
+      {% form 'product', product %}
+        <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<style>
+.product-page {
+  padding: 2rem 0;
+}
+
+.product-info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3498db;
+  margin: 1rem 0;
+}
+
+.btn-add-to-cart {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background: #2980b9;
+}
+</style>

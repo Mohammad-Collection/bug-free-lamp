@@ -1,0 +1,124 @@
+{% comment %}
+  Reveal Image Section
+  Shows an image that reveals a 5-second 3D video on hover/click
+{% endcomment %}
+
+<div class="reveal-image-section" 
+     data-reveal-trigger="{{ section.settings.reveal_trigger | default: settings.reveal_trigger | default: 'hover' }}"
+     data-video-duration="{{ section.settings.video_duration | default: settings.reveal_video_duration | default: 5 }}">
+  
+  {% if section.settings.heading != blank %}
+    <h2 class="reveal-image-heading">{{ section.settings.heading | escape }}</h2>
+  {% endif %}
+
+  <div class="reveal-image-container">
+    {% if section.settings.reveal_image != blank %}
+      <div class="reveal-image-wrapper">
+        <!-- Static Image -->
+        <div class="reveal-image-static">
+          <img src="{{ section.settings.reveal_image | img_url: 'master' }}" 
+               alt="{{ section.settings.reveal_image.alt | escape }}"
+               loading="lazy">
+          
+          {% if section.settings.overlay_text != blank %}
+            <div class="reveal-image-overlay">
+              <span class="reveal-image-overlay-text">{{ section.settings.overlay_text | escape }}</span>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- 3D Video (Hidden by default) -->
+        {% if section.settings.reveal_video != blank %}
+          <div class="reveal-image-video">
+            <video class="reveal-video-element" 
+                   muted 
+                   playsinline
+                   preload="metadata"
+                   data-duration="{{ section.settings.video_duration | default: 5 }}">
+              <source src="{{ section.settings.reveal_video }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="reveal-image-placeholder">
+        <p>Add an image and video to create the reveal effect</p>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.description != blank %}
+    <div class="reveal-image-description">
+      {{ section.settings.description | escape }}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Reveal Image",
+  "tag": "section",
+  "class": "section-reveal-image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Reveal 3D Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "reveal_image",
+      "label": "Static Image"
+    },
+    {
+      "type": "url",
+      "id": "reveal_video",
+      "label": "3D Video URL (MP4)"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "Overlay Text",
+      "default": "Hover to reveal"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "range",
+      "id": "video_duration",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Video Duration",
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "reveal_trigger",
+      "label": "Reveal Trigger",
+      "options": [
+        {
+          "value": "hover",
+          "label": "Hover"
+        },
+        {
+          "value": "click",
+          "label": "Click"
+        }
+      ],
+      "default": "hover"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reveal Image"
+    }
+  ]
+}
+{% endschema %}

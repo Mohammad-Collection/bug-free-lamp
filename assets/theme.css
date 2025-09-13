@@ -1,0 +1,62 @@
+/* Basic Theme Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+.main-content {
+  min-height: 100vh;
+}
+
+/* Section spacing */
+.section {
+  padding: 3rem 0;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Basic header styles */
+#shopify-section-header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Basic footer styles */
+#shopify-section-footer {
+  background: #f8f9fa;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .section {
+    padding: 2rem 0;
+  }
+}
+
+/* Hide elements initially for progressive enhancement */
+.no-js .reveal-image-video,
+.no-js .video-banner-controls {
+  display: none;
+}

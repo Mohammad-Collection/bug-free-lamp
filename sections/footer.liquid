@@ -1,0 +1,30 @@
+{% comment %}
+  Basic footer section
+{% endcomment %}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      <p>Powered by Bug Free Lamp theme with 3D Video Features</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  text-align: center;
+  color: #666;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

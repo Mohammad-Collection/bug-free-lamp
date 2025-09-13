@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags.first }}{% endif -%}
+    {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+    {%- assign title_downcase = page_title | downcase -%}
+    {%- assign name_downcase = shop.name | downcase -%}
+    {%- unless title_downcase contains name_downcase %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title }}</title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  <!-- CSS -->
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'reveal-image.css' | asset_url | stylesheet_tag }}
+  {{ 'video-banner.css' | asset_url | stylesheet_tag }}
+
+  <!-- Header hook for plugins -->
+  {{ content_for_header }}
+
+  <!-- JavaScript -->
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'reveal-image.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'video-banner.js' | asset_url }}" defer="defer"></script>
+</head>
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+  <div id="shopify-section-header">
+    {% section 'header' %}
+  </div>
+
+  <main class="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  <div id="shopify-section-footer">
+    {% section 'footer' %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Bug Free Lamp",
+    "theme_version": "1.0.0",
+    "theme_author": "Mohammad Collection",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent color",
+        "default": "#3498db"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image"
+      }
+    ]
+  },
+  {
+    "name": "Reveal Image Settings",
+    "settings": [
+      {
+        "type": "range",
+        "id": "reveal_video_duration",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "s",
+        "label": "Video duration",
+        "default": 5
+      },
+      {
+        "type": "select",
+        "id": "reveal_trigger",
+        "label": "Reveal trigger",
+        "options": [
+          {
+            "value": "hover",
+            "label": "Hover"
+          },
+          {
+            "value": "click",
+            "label": "Click"
+          }
+        ],
+        "default": "hover"
+      }
+    ]
+  },
+  {
+    "name": "Video Banner Settings",
+    "settings": [
+      {
+        "type": "range",
+        "id": "banner_video_duration",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "s",
+        "label": "Banner video duration",
+        "default": 5
+      },
+      {
+        "type": "checkbox",
+        "id": "banner_autoplay",
+        "label": "Auto-play video",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "banner_loop",
+        "label": "Loop video",
+        "default": true
+      }
+    ]
+  }
+]

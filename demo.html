@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Free Lamp - 3D Video Theme Demo</title>
+    <link rel="stylesheet" href="/assets/theme.css">
+    <link rel="stylesheet" href="/assets/reveal-image.css">
+    <link rel="stylesheet" href="/assets/video-banner.css">
+    <style>
+        /* Demo specific styles */
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .demo-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+        }
+        .demo-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">Bug Free Lamp - Shopify Theme Demo</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 3rem;">
+            Interactive 3D video reveal effects and video banners for Shopify stores
+        </p>
+
+        <!-- Video Banner Demo -->
+        <div class="demo-section">
+            <h2>🎬 Video Banner Section</h2>
+            <div class="video-banner-section" 
+                 data-autoplay="true" 
+                 data-loop="true" 
+                 data-duration="5">
+                
+                <h2 class="video-banner-heading">3D Video Banner</h2>
+                
+                <div class="video-banner-container">
+                    <div class="video-banner-wrapper">
+                        <video class="video-banner-element"
+                               autoplay
+                               loop
+                               muted
+                               playsinline
+                               controls="true"
+                               data-duration="5">
+                            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <div class="video-banner-overlay">
+                            <div class="video-banner-overlay-content">
+                                <h3>Amazing 3D Video Experience</h3>
+                                <p>Hover to see the advanced 3D effects in action</p>
+                            </div>
+                        </div>
+
+                        <div class="video-banner-cta">
+                            <a href="#" class="video-banner-cta-button">
+                                Shop Now
+                            </a>
+                        </div>
+
+                        <div class="video-banner-controls">
+                            <button class="video-control-btn video-play-pause" aria-label="Play/Pause">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon">⏸</span>
+                            </button>
+                            <div class="video-progress-bar">
+                                <div class="video-progress-fill"></div>
+                            </div>
+                            <button class="video-control-btn video-mute" aria-label="Mute/Unmute">
+                                <span class="unmute-icon">🔊</span>
+                                <span class="mute-icon">🔇</span>
+                            </button>
+                            <button class="video-control-btn video-fullscreen" aria-label="Fullscreen">
+                                <span class="fullscreen-icon">⛶</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-banner-description">
+                    Experience cutting-edge 3D video technology with smooth animations and interactive controls.
+                </div>
+            </div>
+        </div>
+
+        <!-- Reveal Image Demo -->
+        <div class="demo-section">
+            <h2>🖼️ Reveal Image Section</h2>
+            <div class="reveal-image-section" 
+                 data-reveal-trigger="hover" 
+                 data-video-duration="5">
+                
+                <h2 class="reveal-image-heading">Reveal 3D Video</h2>
+                
+                <div class="reveal-image-container">
+                    <div class="reveal-image-wrapper" data-reveal-trigger="hover">
+                        <div class="reveal-image-static">
+                            <img src="https://picsum.photos/800/450?random=1" 
+                                 alt="Sample reveal image"
+                                 loading="lazy">
+                            
+                            <div class="reveal-image-overlay">
+                                <span class="reveal-image-overlay-text">Hover to reveal video</span>
+                            </div>
+                        </div>
+
+                        <div class="reveal-image-video">
+                            <video class="reveal-video-element" 
+                                   muted 
+                                   playsinline
+                                   preload="metadata"
+                                   data-duration="5">
+                                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-image-description">
+                    Hover over the image to reveal a 5-second 3D video with smooth transitions and effects.
+                </div>
+            </div>
+        </div>
+
+        <!-- Click Trigger Demo -->
+        <div class="demo-section">
+            <h2>👆 Click Trigger Demo</h2>
+            <div class="reveal-image-section" 
+                 data-reveal-trigger="click" 
+                 data-video-duration="5">
+                
+                <h2 class="reveal-image-heading">Click to Reveal Video</h2>
+                
+                <div class="reveal-image-container">
+                    <div class="reveal-image-wrapper" data-reveal-trigger="click">
+                        <div class="reveal-image-static">
+                            <img src="https://picsum.photos/800/450?random=2" 
+                                 alt="Sample click reveal image"
+                                 loading="lazy">
+                            
+                            <div class="reveal-image-overlay">
+                                <span class="reveal-image-overlay-text">Click to reveal video</span>
+                            </div>
+                        </div>
+
+                        <div class="reveal-image-video">
+                            <video class="reveal-video-element" 
+                                   muted 
+                                   playsinline
+                                   preload="metadata"
+                                   data-duration="5">
+                                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-image-description">
+                    Click on the image to trigger the 5-second video reveal with 3D animations.
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 4rem; padding: 2rem; background: #f8f9fa;">
+            <p>&copy; 2024 Bug Free Lamp Theme. Featuring 5-second 3D video effects for Shopify.</p>
+        </footer>
+    </div>
+
+    <script src="/assets/theme.js"></script>
+    <script src="/assets/reveal-image.js"></script>
+    <script src="/assets/video-banner.js"></script>
+</body>
+</html>

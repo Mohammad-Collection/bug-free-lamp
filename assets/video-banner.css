@@ -1,0 +1,308 @@
+/* Video Banner Section Styles */
+.video-banner-section {
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.video-banner-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.video-banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.video-banner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+
+.video-banner-wrapper:hover {
+  transform: perspective(1000px) rotateY(2deg) rotateX(2deg) scale(1.02);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.video-banner-element {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.video-banner-wrapper:hover .video-banner-overlay {
+  opacity: 1;
+}
+
+.video-banner-overlay-content {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.video-banner-wrapper:hover .video-banner-overlay-content {
+  transform: translateY(0);
+}
+
+.video-banner-overlay-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.video-banner-overlay-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-banner-cta {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.video-banner-cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.video-banner-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.video-banner-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-banner-wrapper:hover .video-banner-controls {
+  opacity: 1;
+}
+
+.video-control-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.video-control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.video-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  width: 0%;
+  transition: width 0.1s ease;
+  border-radius: 3px;
+}
+
+.video-banner-description {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-banner-placeholder {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 3px dashed #dee2e6;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.3rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Control Icon States */
+.video-play-pause .pause-icon,
+.video-banner-wrapper.playing .video-play-pause .play-icon {
+  display: none;
+}
+
+.video-banner-wrapper.playing .video-play-pause .pause-icon {
+  display: block;
+}
+
+.video-mute .mute-icon,
+.video-banner-wrapper.muted .video-mute .unmute-icon {
+  display: none;
+}
+
+.video-banner-wrapper.muted .video-mute .mute-icon {
+  display: block;
+}
+
+/* 3D Animation for Video */
+@keyframes video3DFloat {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(1deg) rotateY(2deg) translateZ(10px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-1deg) rotateY(-2deg) translateZ(5px);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(1deg) rotateY(-1deg) translateZ(10px);
+  }
+}
+
+.video-banner-wrapper.autoplay-3d {
+  animation: video3DFloat 10s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-banner-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .video-banner-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .video-banner-element {
+    min-height: 300px;
+  }
+  
+  .video-banner-overlay-content h3 {
+    font-size: 2rem;
+  }
+  
+  .video-banner-overlay-content p {
+    font-size: 1rem;
+  }
+  
+  .video-banner-controls {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .video-control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-banner-heading {
+    font-size: 2rem;
+  }
+  
+  .video-banner-container {
+    min-height: 300px;
+  }
+  
+  .video-banner-element {
+    min-height: 250px;
+  }
+  
+  .video-banner-wrapper {
+    border-radius: 12px;
+  }
+  
+  .video-banner-cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
