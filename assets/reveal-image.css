@@ -62,6 +62,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .reveal-image-overlay-text {
@@ -78,6 +79,7 @@
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
 }
 
 .reveal-video-element {
@@ -114,6 +116,7 @@
 .reveal-image-wrapper[data-reveal-trigger="hover"]:hover .reveal-image-video {
   opacity: 1;
   transform: scale(1);
+  pointer-events: auto;
 }
 
 .reveal-image-wrapper[data-reveal-trigger="hover"]:hover .reveal-image-overlay {
@@ -129,6 +132,7 @@
 .reveal-image-wrapper.reveal-active .reveal-image-video {
   opacity: 1;
   transform: scale(1);
+  pointer-events: auto;
 }
 
 .reveal-image-wrapper.reveal-active .reveal-image-overlay {
