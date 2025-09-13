@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3D Reveal Image Demo</title>
+    <link rel="stylesheet" href="{{ 'reveal-image-3d.css' | asset_url }}">
+  </head>
+  <body>
+    <header>
+      <h1>3D Reveal Image Demo</h1>
+      <p>Click or hover on the images below to see them transform into 5-second videos with amazing 3D effects!</p>
+    </header>
+
+    <main>
+      {% section 'reveal-image-3d' %}
+    </main>
+
+    <script src="{{ 'reveal-image-3d.js' | asset_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{% comment %}
+  Reveal Image 3D Snippet - Reusable component
+  Usage: {% render 'reveal-image-3d', image: image, video: video %}
+{% endcomment %}
+
+{%- liquid
+  assign image = image | default: blank
+  assign video = video | default: blank
+  assign alt_text = alt_text | default: image.alt
+  assign container_class = container_class | default: ''
+-%}
+
+<div class="reveal-image-container {{ container_class }}" 
+     data-image="{{ image | image_url: width: 800 }}" 
+     data-video="{{ video | file_url }}">
+  
+  <div class="reveal-image-wrapper">
+    {% if image %}
+      <img class="reveal-image" 
+           src="{{ image | image_url: width: 800 }}" 
+           alt="{{ alt_text | escape }}"
+           loading="lazy">
+    {% else %}
+      <div class="reveal-image placeholder-image">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#E5E5E5"/>
+          <path d="M30 70L45 55L60 70L75 55L90 70V80H10V70H30Z" fill="#CCCCCC"/>
+          <circle cx="35" cy="35" r="8" fill="#CCCCCC"/>
+        </svg>
+        <p>No image provided</p>
+      </div>
+    {% endif %}
+    
+    {% if video %}
+      <video class="reveal-video" 
+             preload="metadata" 
+             muted 
+             playsinline>
+        <source src="{{ video | file_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% else %}
+      <div class="reveal-video placeholder-video">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#E5E5E5"/>
+          <polygon points="40,30 40,70 70,50" fill="#CCCCCC"/>
+        </svg>
+        <p>No video provided</p>
+      </div>
+    {% endif %}
+  </div>
+  
+  {% comment %} Interaction hint {% endcomment %}
+  <div class="interaction-hint">
+    <span>✨ Click to reveal</span>
+  </div>
+</div>
+
+<style>
+  .placeholder-image,
+  .placeholder-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    color: #999;
+    font-style: italic;
+    border: 2px dashed #ddd;
+    gap: 10px;
+  }
+  
+  .placeholder-image p,
+  .placeholder-video p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+</style>

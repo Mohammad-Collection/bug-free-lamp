@@ -1,0 +1,26 @@
+# Shopify theme files to ignore
+.DS_Store
+Thumbs.db
+
+# Development files
+/tmp/
+*.log
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# Node modules (if using build tools)
+node_modules/
+npm-debug.log*
+
+# Shopify CLI
+.shopify/

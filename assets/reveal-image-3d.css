@@ -1,0 +1,137 @@
+/* Reveal Image to Video 3D Component */
+.reveal-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  perspective: 1000px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.reveal-image-container:hover .reveal-image-wrapper {
+  transform: rotateY(180deg);
+}
+
+.reveal-image,
+.reveal-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.reveal-image {
+  z-index: 2;
+  transform: rotateY(0deg);
+  transition: opacity 0.3s ease;
+}
+
+.reveal-video {
+  z-index: 1;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reveal-image-container.video-active .reveal-image {
+  opacity: 0;
+}
+
+.reveal-image-container.video-active .reveal-video {
+  opacity: 1;
+}
+
+/* 3D Floating Animation */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg);
+  }
+}
+
+.reveal-image-container {
+  animation: float3d 3s ease-in-out infinite;
+}
+
+/* Click interaction styles */
+.reveal-image-container.clicked {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Loading state */
+.reveal-image-container.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reveal-image-container {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+  
+  .reveal-image-wrapper {
+    height: 300px;
+  }
+}
+
+/* Additional 3D effects */
+.reveal-image-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.reveal-image-container:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
