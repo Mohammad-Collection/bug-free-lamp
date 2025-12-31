@@ -64,6 +64,28 @@ explain exactly where to look:
   // any other reveal-related calls that were inside the timeout
   ```
 
+- If you want to be certain about what to delete, temporarily insert
+  comment markers before and after the timeout, then remove the marked block:
+
+  ```js
+  // BEGIN REMOVE (5s delay)
+  setTimeout(() => {
+    startReveal();
+    initHeroVideo();
+    preloadModel();
+  }, 5000);
+  // END REMOVE (5s delay)
+  ```
+
+  Delete everything between `BEGIN REMOVE` and `END REMOVE` (including those
+  two lines), then keep the inner calls in place:
+
+  ```js
+  startReveal();
+  initHeroVideo();
+  preloadModel();
+  ```
+
 ## Speed up media delivery
 - Provide a `poster` attribute on videos to avoid blank frames, e.g.
   `<video muted playsinline preload="metadata" poster="{{ poster | img_url: '720x' }}">`.
